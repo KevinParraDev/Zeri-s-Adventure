@@ -136,7 +136,8 @@ public class Bull : MonoBehaviour
     {
         _rb.velocity = new Vector2(0, 0);
         _puedeAtacar = false;
-        _player.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(forceAttackX, forceAttackY));
+        _player.GetComponent<PlayerMovement>().Atacada(forceAttackX * _direction, forceAttackY);
+        _player.GetComponent<PlayerMovement>().Morir();
         _player.GetComponent<Health>().Attack(2);
         StartCoroutine(stateDelay(1, StateType.Search));
     }

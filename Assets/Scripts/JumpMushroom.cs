@@ -9,7 +9,9 @@ public class JumpMushroom : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, _jumpForce));
+            GetComponent<Animator>().SetTrigger("rebotar");
+            //other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, _jumpForce));
+            other.gameObject.GetComponent<PlayerMovement>().Atacada(0, _jumpForce);
         }
     }
 }

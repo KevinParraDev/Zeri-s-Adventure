@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public GameObject _playerGO;
+    public PlayerMovement playerMovement;
 
     public float forceAttackX, forceAttackY;
     public void Attack(string type)
@@ -12,7 +12,7 @@ public class EnemyAttack : MonoBehaviour
         switch (type)
         {
             case "Bull":
-                _playerGO.GetComponent<Rigidbody2D>().AddForce(new Vector2(forceAttackX, forceAttackY));
+                playerMovement.Atacada(forceAttackX, forceAttackY);
                 break;
         }
     }

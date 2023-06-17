@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator _anim;
+    [SerializeField] private bool _viva = true;
 
     //-----------------------------------------------------------
     [Header("Inputs")]
@@ -36,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
     private float _dirSaltoPared;
     private bool _saltoGuardado = false;
     private bool _cayendo = false;
+    private bool _atacada = false;
+
+    [Header("Pisoton")]
+    public bool _pisoton;
+    [SerializeField] private float _fuerzaPisoton;
 
     [Header("Dash")]
     [SerializeField] private float _velocidadDash;
@@ -46,8 +52,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _velocidadDeTrepado;
     [SerializeField] private float _velocidadDeDeslizamiento;
 
+    [Header("Volar")]
+    [SerializeField] private bool _puedeVolar = false;
+    [SerializeField] private float _fuerzaFlotar;
+
+
+    [Header("Interaccion")]
+    [SerializeField] private GameObject objetoInteractivo;
+
+    private Vector3 _lastCheckpoint;
+
     private void Start()
     {
+        _viva = true;
         rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _gravedadInicial = rb.gravityScale;
@@ -55,26 +72,63 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        DetectarEstado();
-        GetInputs();
+        if (_viva)
+        {
+            DetectarEstado();
+            GetInputs();
+        }
+    }
+
+    public void Atacada(float x, float y)
+    {
+        _atacada = true;
+        rb.velocity = new Vector2(0, 0);
+        rb.velocity = new Vector2(x, y);
+        StartCoroutine(ResetAtacada());
+    }
+
+    IEnumerator ResetAtacada()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _atacada = false;
     }
 
     private void FixedUpdate()
     {
-        DetectarEntorno();
-        // Moverse
-        if (_sePuedeMover)
-            Moverse(Input.GetAxisRaw("Horizontal") * Time.fixedDeltaTime);
+        if (_viva)
+        {
+            DetectarEntorno();
+            // Moverse
+            if (_sePuedeMover)
+                Moverse(Input.GetAxisRaw("Horizontal") * Time.fixedDeltaTime);
 
-        // Trepar
-        if (_agarrarPared)
-            Trepar(Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime);
+            // Trepar
+            if (_agarrarPared)
+                Trepar(Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime);
+        }
     }
 
     private void GetInputs()
     {
+        //Interactuar
+        if (Input.GetKeyDown(KeyCode.E) && objetoInteractivo != null)
+        {
+            if (objetoInteractivo.TryGetComponent<Palanca>(out Palanca objeto))
+                objeto.Interaccion();
+        }
+
+        // flotar
+        if (Input.GetKeyDown(KeyCode.H) && _puedeVolar)
+        {
+            Flotar(true);
+        }
+        else if (Input.GetKeyUp(KeyCode.H))
+        {
+            Flotar(false);
+        }
+
         // Saltar
-        if ((Input.GetButtonDown("Jump")) && _puedeSaltar)
+        if ((Input.GetButtonDown("Jump")) && _puedeSaltar && !_atacada)
         {
             Saltar();
         }
@@ -109,6 +163,35 @@ public class PlayerMovement : MonoBehaviour
             Deslizarse(false);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<Palanca>())
+        {
+            objetoInteractivo = other.gameObject;
+        }
+
+        if (other.gameObject.name == "Flotar")
+        {
+            _puedeVolar = true;
+        }
+
+        if (other.tag == "checkpoint")
+        {
+            _lastCheckpoint = other.gameObject.transform.position;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.GetComponent<Palanca>())
+            objetoInteractivo = null;
+
+        if (other.gameObject.name == "Flotar")
+        {
+            _puedeVolar = false;
+            Flotar(false);
+        }
+    }
+
     private void DetectarEntorno()
     {
         _enSuelo = Physics2D.OverlapBox(_transformSuelo.position, _tamañoCajaSuelo, 0f, _capaSuelo);
@@ -129,7 +212,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (_enSuelo)
         {
-            _puedeHacerDash = true;
             if (_cayendo)
             {
                 _cayendo = false;
@@ -139,18 +221,30 @@ public class PlayerMovement : MonoBehaviour
 
         if (_enSuelo || _enPared)
         {
+            _puedeHacerDash = true;
             _puedeSaltar = true;
             if (_saltoGuardado)
             {
                 _saltoGuardado = false;
                 Saltar();
             }
+
+            if (_pisoton)
+                _pisoton = false;
         }
         else
         {
+            if (Input.GetAxisRaw("Vertical") < 0 && _pisoton == false)
+            {
+                Debug.Log("pisoton");
+                _pisoton = true;
+                rb.velocity = new Vector2(0, _fuerzaPisoton);
+            }
+
             if (rb.velocity.y < 0 && _cayendo == false)
             {
                 _cayendo = true;
+                _anim.SetTrigger("Caer");
             }
             StartCoroutine(CoyoteTime());   //Guardar salto aqui
         }
@@ -273,6 +367,11 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Atacar");
     }
 
+    private void Pisoton()
+    {
+        Debug.Log("Pisoton");
+    }
+
     private void Deslizarse(bool deslizandose)
     {
         _deslizandose = deslizandose;
@@ -297,6 +396,7 @@ public class PlayerMovement : MonoBehaviour
         if (_agarrarPared)
         {
             print("Trepando");
+            _anim.SetTrigger("AgarrarPared");
             _primerToque = false;
             rb.gravityScale = 0;
             _sePuedeMover = false;
@@ -321,6 +421,49 @@ public class PlayerMovement : MonoBehaviour
 
         float movimiento = inputY * _velocidadDeTrepado;
         rb.velocity = new Vector2(0, movimiento);
+    }
+
+    private void Flotar(bool flotar)
+    {
+        if (flotar)
+        {
+            rb.gravityScale = 0;
+            rb.velocity = new Vector2(rb.velocity.x, _fuerzaFlotar);
+            _anim.SetTrigger("Saltar");
+        }
+        else if (!flotar)
+        {
+            rb.gravityScale = _gravedadInicial;
+        }
+    }
+
+    public void Morir()
+    {
+        Debug.Log("Desaparecer");
+        rb.gravityScale = 0;
+        rb.velocity = Vector2.zero;
+        _viva = false;
+        _anim.SetTrigger("Morir");
+    }
+
+    public IEnumerator delayReaparecer()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSecondsRealtime(0.5f);
+        Reaparecer();
+    }
+
+    public void Reaparecer()
+    {
+        _viva = true;
+        gameObject.transform.position = _lastCheckpoint;
+        GetComponent<SpriteRenderer>().enabled = true;
+        _anim.SetTrigger("Reaparecer");
+    }
+
+    public void VolverGravedad()
+    {
+        rb.gravityScale = _gravedadInicial;
     }
 
     private void OnDrawGizmos()

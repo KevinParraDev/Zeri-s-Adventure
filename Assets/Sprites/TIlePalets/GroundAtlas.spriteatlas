@@ -48,6 +48,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 37fb86b2de962c44190145212f880ecb, type: 3}
     - {fileID: 2800000, guid: e7afc4c3b3d80c8448328ed8f8e5657a, type: 3}
     - {fileID: 2800000, guid: 4743c44023462224c92db6832abe2926, type: 3}
+    - {fileID: 2800000, guid: fd2bbff703194844781e77708322363e, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -155,6 +156,24 @@ SpriteAtlas:
   - {fileID: 6189598, guid: e7afc4c3b3d80c8448328ed8f8e5657a, type: 3}
   - {fileID: 1855585074, guid: e7afc4c3b3d80c8448328ed8f8e5657a, type: 3}
   - {fileID: 645097786, guid: e7afc4c3b3d80c8448328ed8f8e5657a, type: 3}
+  - {fileID: -125561397, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 1337867440, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 25656244, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 460776367, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 768335895, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 1929837790, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 1245325632, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 121303446, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: -856538445, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 1946417854, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 209296686, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: -1993270569, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 1588047200, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: -349695386, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 22053759, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: -1943757023, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 1413761256, guid: fd2bbff703194844781e77708322363e, type: 3}
+  - {fileID: 211929682, guid: fd2bbff703194844781e77708322363e, type: 3}
   - {fileID: 199838651, guid: 1848771afdf70f241be534d056e93282, type: 3}
   - {fileID: -626198676, guid: 1848771afdf70f241be534d056e93282, type: 3}
   - {fileID: 176297574, guid: 1848771afdf70f241be534d056e93282, type: 3}
@@ -310,6 +329,24 @@ SpriteAtlas:
   - ExtraBlocks_16
   - ExtraBlocks_15
   - ExtraBlocks_14
+  - ArbustosRosas_16
+  - ArbustosRosas_17
+  - ArbustosRosas_14
+  - ArbustosRosas_15
+  - ArbustosRosas_12
+  - ArbustosRosas_13
+  - ArbustosRosas_10
+  - ArbustosRosas_11
+  - ArbustosRosas_9
+  - ArbustosRosas_8
+  - ArbustosRosas_3
+  - ArbustosRosas_2
+  - ArbustosRosas_1
+  - ArbustosRosas_0
+  - ArbustosRosas_7
+  - ArbustosRosas_6
+  - ArbustosRosas_5
+  - ArbustosRosas_4
   - TileSetGround_48
   - TileSetGround_43
   - TileSetGround_42
