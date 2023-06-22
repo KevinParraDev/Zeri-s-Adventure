@@ -60,6 +60,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Interaccion")]
     [SerializeField] private GameObject objetoInteractivo;
 
+    [Header("Sonidos")]
+    [SerializeField] private AudioSource arerrizarSound;
+
     private Vector3 _lastCheckpoint;
 
     private void Start()
@@ -215,6 +218,7 @@ public class PlayerMovement : MonoBehaviour
             if (_cayendo)
             {
                 _cayendo = false;
+                arerrizarSound.Play();
                 _anim.SetTrigger("Aterrizar");
             }
         }
