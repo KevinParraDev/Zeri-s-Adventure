@@ -10,4 +10,5 @@ A lo largo del mapa vas a adquirir diferentes habilidades que te permitirán seg
 
 
 ## Gameplay
-[![](https://markdown-videos.deta.dev/youtube/cMdAMpP4f-E)](https://youtu.be/cMdAMpP4f-E)
+[![](https://markdown-videos.deta.dev/youtube/cMdAMpP4f-E)](https://www.youtube.com/watch?v=cMdAMpP4f-E)
+[![Alt text](https://img.youtube.com/vi/cMdAMpP4f-E/0.jpg)](https://www.youtube.com/watch?v=cMdAMpP4f-E)
