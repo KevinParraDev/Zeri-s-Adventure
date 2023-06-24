@@ -14,3 +14,4 @@ A lo largo del mapa vas a adquirir diferentes habilidades que te permitirán seg
 
 ## Paquetes extra y recursos
 Todos los recursos graficos de este juego fueron realizados por Santiago Parra, la musica fue tomada de https://www.newgrounds.com/audio/listen/1223581
+> Version de Unity: 2021.3.17f1
