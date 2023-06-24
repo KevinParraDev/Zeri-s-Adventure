@@ -1,0 +1,1499 @@
+fileFormatVersion: 2
+guid: df35a05b2eda2604483b6d7fa10fa31c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ToroFinal_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4e9890ec424b34e8512602e7ddca65
+      internalID: 1173347236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a21ed0fcd78ae34387b62396cad33e0
+      internalID: 424187315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ff71674c89322488dc658989d04714
+      internalID: 1083687116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb0673138660b6429f0340a25059cb7
+      internalID: 1493420048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9eeb58a5f3b4f419c6f984d302f8d8
+      internalID: -1125917506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4c4a441e692eb41b119e44557a2b1b
+      internalID: -2145117109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80468baa0ae11a04a8030d06666d93dd
+      internalID: 721330524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f08aa8bbaceff745b16b2e9d52f6a12
+      internalID: -98504857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f787a718cf9ac34583554ca38fcb5be
+      internalID: 202731235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59e3deb7e0c66444bf778838f69e511
+      internalID: -1400650375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 576
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16e6c55c812a9e4ca2e9dcdd2cf68bd
+      internalID: 852342139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_11
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 576
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8312fbf24c8ffe7439c5eaf1bfac536b
+      internalID: 2090926984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363190b946a96c544a8e8a98d7172e4a
+      internalID: 2108985274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82eb1ad129c49042b355560b40e1ba9
+      internalID: -477208221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4eaba5039fba8e4f8ce35a2d221b9c9
+      internalID: -1650857349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8f745f23ac631846a8e004b6955d926
+      internalID: 853464388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46de2de543cdcb642a74b41cca184130
+      internalID: 1403631798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_17
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 512
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded0bf441be019b4bbe3770dff410c4f
+      internalID: -545271944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3244fa96534dcab41becc4f5b5277fb0
+      internalID: 1877001444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4aa20136ac2de04caea7fa49b300676
+      internalID: 485650588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55333ee2325ae544bd843ae7c271385
+      internalID: 1589987138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 448
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4318e1eba1ed74485a0bea71895641
+      internalID: -1903793253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_22
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 448
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6b905076d64d34c9915ca29ec114d2
+      internalID: 245818866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_23
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 448
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84aa5c8c36a334b439d5d78146db3489
+      internalID: 803999688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c040b405478d90a47986d927654273bd
+      internalID: 931950597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1186c2fd43a0a45bf502bb8e97af35
+      internalID: -1448866643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e6608a6e4d3d5478a60c65a434e4af
+      internalID: -120377942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f535785d2008048a8894237a1f32e7
+      internalID: -151880355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_28
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26dcd0d97dc753b4aa06134845a29841
+      internalID: 480705747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_29
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 384
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c8b033297d29e4893a72ae3d72e83f
+      internalID: -461018118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed07284e5978c8148b680f11a7a2a381
+      internalID: 1007932345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_31
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3b346f4d5eba749bab9c432b3e3962
+      internalID: 1112009592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_32
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f0160ba75c45c49913540818e9ecbc
+      internalID: 669038521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_33
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610a268caf7c95e489412034fd9b56f1
+      internalID: -863770301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_34
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 320
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d9a4d5b9f5fa24f875d7e330b49ba8
+      internalID: -2027216426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_35
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 320
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f729e08b8aef6d44b70b9fc294e0cb7
+      internalID: -370779847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70feefaebd9f03e47941de0d97d8bcbb
+      internalID: -1354991790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_37
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a8f6dda519f37b4f8347168b5a3b244
+      internalID: -1219610325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_38
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a8960eb261d6a499c025215f852461
+      internalID: -361610825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_39
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987566a359ecf74419d3d77987161d11
+      internalID: 1360345029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_40
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb7dec4bf820ee4d9eb485d1191bbf9
+      internalID: 2140069882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_41
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be917b28f72e85f4cb30b08c454f8279
+      internalID: 828864296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d827c3ad54c58bc459f6d07ac90d9715
+      internalID: -706554807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_43
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a75ebe26cdc76648adcf97332ab5ee5
+      internalID: 723370808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 825625b760a79ad4594408a7cafeac87
+      internalID: 444903403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_45
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 341b5ebfda740414c89fca63c7f4c2a9
+      internalID: -85035126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_46
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 192
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a032fbff848ad354f9c3f9454ed24d82
+      internalID: -577523619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_47
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 192
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c98a8853ca9e5418ccdd515e95698f
+      internalID: 528211219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49032969ed561d42932094fe8aaebb3
+      internalID: 801523075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2a0d6041682cd4b8c692cf69876ce3
+      internalID: -2101728370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_50
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf3a9a2d812cc14cb98aff627a7984f
+      internalID: 596543510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_51
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c110148ce3a3a43ab5f2cf274f38c2
+      internalID: -1102476700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_52
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c1426c920a9a144b14feb6978d5da2
+      internalID: -1438936556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_53
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24246068d8f9bf14386f832fcc1f7ad2
+      internalID: -1781648380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3c61d8408649448bd3784c35129c94
+      internalID: -1911969133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_55
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a0382cc892655b4abae508d8cd2a637
+      internalID: 12575410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_56
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599d9ef24a4700844ac8519b6ad76f9b
+      internalID: 831795511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_57
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fbc5c9850b5a243b458b57f82797e5
+      internalID: -1010033623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_58
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e0efd5474f09046b4a2e26d603f66e
+      internalID: 1076233794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_59
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 64
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44571eeb303ae0f468e875df19208012
+      internalID: -1121826376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2e198f866b76a42bb201e75a9184b8
+      internalID: 1013973420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroFinal_61
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.457, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 720f990502f88cb4b869e81bcc8044e8
+      internalID: 591329096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ToroFinal_4: -1125917506
+      ToroFinal_34: -2027216426
+      ToroFinal_40: 2140069882
+      ToroFinal_48: 801523075
+      ToroFinal_24: 931950597
+      ToroFinal_51: -1102476700
+      ToroFinal_60: 1013973420
+      ToroFinal_20: 1589987138
+      ToroFinal_53: -1781648380
+      ToroFinal_3: 1493420048
+      ToroFinal_15: 853464388
+      ToroFinal_44: 444903403
+      ToroFinal_28: 480705747
+      ToroFinal_55: 12575410
+      ToroFinal_10: 852342139
+      ToroFinal_39: 1360345029
+      ToroFinal_30: 1007932345
+      ToroFinal_0: 1173347236
+      ToroFinal_35: -370779847
+      ToroFinal_42: -706554807
+      ToroFinal_50: 596543510
+      ToroFinal_54: -1911969133
+      ToroFinal_13: -477208221
+      ToroFinal_58: 1076233794
+      ToroFinal_8: 202731235
+      ToroFinal_23: 803999688
+      ToroFinal_17: -545271944
+      ToroFinal_25: -1448866643
+      ToroFinal_26: -120377942
+      ToroFinal_27: -151880355
+      ToroFinal_31: 1112009592
+      ToroFinal_56: 831795511
+      ToroFinal_29: -461018118
+      ToroFinal_9: -1400650375
+      ToroFinal_36: -1354991790
+      ToroFinal_11: 2090926984
+      ToroFinal_45: -85035126
+      ToroFinal_33: -863770301
+      ToroFinal_52: -1438936556
+      ToroFinal_19: 485650588
+      ToroFinal_43: 723370808
+      ToroFinal_59: -1121826376
+      ToroFinal_1: 424187315
+      ToroFinal_12: 2108985274
+      ToroFinal_21: -1903793253
+      ToroFinal_37: -1219610325
+      ToroFinal_5: -2145117109
+      ToroFinal_6: 721330524
+      ToroFinal_47: 528211219
+      ToroFinal_57: -1010033623
+      ToroFinal_38: -361610825
+      ToroFinal_14: -1650857349
+      ToroFinal_16: 1403631798
+      ToroFinal_18: 1877001444
+      ToroFinal_32: 669038521
+      ToroFinal_41: 828864296
+      ToroFinal_22: 245818866
+      ToroFinal_49: -2101728370
+      ToroFinal_2: 1083687116
+      ToroFinal_46: -577523619
+      ToroFinal_61: 591329096
+      ToroFinal_7: -98504857
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

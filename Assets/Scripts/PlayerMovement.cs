@@ -41,9 +41,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Pisoton")]
     public bool _pisoton;
+    [SerializeField] private bool _pisotonDesbloqueado = false;
     [SerializeField] private float _fuerzaPisoton;
 
     [Header("Dash")]
+    [SerializeField] private bool _dashDesbloqueado = false;
     [SerializeField] private float _velocidadDash;
     [SerializeField] private float _tiempoDash;
 
@@ -53,12 +55,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _velocidadDeDeslizamiento;
 
     [Header("Volar")]
+    [SerializeField] private bool _planearDesbloquado = false;
     [SerializeField] private bool _puedeVolar = false;
+    [SerializeField] private bool _volando = false;
     [SerializeField] private float _fuerzaFlotar;
 
 
     [Header("Interaccion")]
     [SerializeField] private GameObject objetoInteractivo;
+    [SerializeField] private GameObject altarActivo;
 
     [Header("Sonidos")]
     [SerializeField] private AudioSource arerrizarSound;
@@ -96,6 +101,16 @@ public class PlayerMovement : MonoBehaviour
         _atacada = false;
     }
 
+    public void DesbloquearHabilidad(string habilidad)
+    {
+        switch (habilidad)
+        {
+            case "Dash": _dashDesbloqueado = true; break;
+            case "Pisoton": _pisotonDesbloqueado = true; break;
+            case "Planear": _planearDesbloquado = true; break;
+        }
+    }
+
     private void FixedUpdate()
     {
         if (_viva)
@@ -118,14 +133,23 @@ public class PlayerMovement : MonoBehaviour
         {
             if (objetoInteractivo.TryGetComponent<Palanca>(out Palanca objeto))
                 objeto.Interaccion();
+
+            if (objetoInteractivo.TryGetComponent<Cartel>(out Cartel objeto3))
+                objeto3.Interaccion();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && altarActivo != null)
+        {
+            if (altarActivo.TryGetComponent<Altar>(out Altar objeto2))
+                objeto2.Interaccion(this);
         }
 
         // flotar
-        if (Input.GetKeyDown(KeyCode.H) && _puedeVolar)
+        if (Input.GetButton("Fire2") && _puedeVolar && _planearDesbloquado && !_agarrarPared)
         {
             Flotar(true);
         }
-        else if (Input.GetKeyUp(KeyCode.H))
+        else if (Input.GetKeyUp(KeyCode.H) || _agarrarPared && _volando)
         {
             Flotar(false);
         }
@@ -141,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Agacharse
-        if (Input.GetAxisRaw("Vertical") < 0 && _agachado == false && !_agarrarPared)
+        if (Input.GetAxisRaw("Vertical") < 0 && _agachado == false && !_agarrarPared && _enSuelo)
             Agacharse(true);
         else if (Input.GetAxisRaw("Vertical") >= 0 && _agachado == true)
             Agacharse(false);
@@ -151,27 +175,35 @@ public class PlayerMovement : MonoBehaviour
             Atacar();
 
         // Dash
-        if (Input.GetButtonDown("Fire3") && _puedeHacerDash)
+        if (Input.GetButtonDown("Fire3") && _puedeHacerDash && _dashDesbloqueado)
             StartCoroutine(Dash());
 
         // Agarrar Pared
+        if (Input.GetAxisRaw("Horizontal") != 0 && rb.velocity.y < 0 && _enPared && !_agarrarPared && !_saltandoEnPared)
+            Deslizarse(true);
+        else if (_deslizandose && !_agarrarPared)
+            Deslizarse(false);
+
         if (_enPared && Input.GetButton("Fire2") && !_saltandoEnPared && _primerToque)
             AgarrarPared(true);
         else if (Input.GetButtonUp("Fire2"))
             AgarrarPared(false);
-
-        if (Input.GetAxisRaw("Horizontal") != 0 && rb.velocity.y < 0 && _enPared && !_agarrarPared && !_saltandoEnPared)
-            Deslizarse(true);
-        else if (_deslizandose)
-            Deslizarse(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<Palanca>())
+        if (other.GetComponent<Palanca>() || other.GetComponent<Cartel>())
         {
             objetoInteractivo = other.gameObject;
         }
+
+        if (other.GetComponent<Altar>())
+        {
+            altarActivo = other.gameObject;
+        }
+
+        if (other.GetComponent<Cartel>())
+            other.GetComponent<Cartel>().Interaccion(true);
 
         if (other.gameObject.name == "Flotar")
         {
@@ -185,8 +217,14 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.GetComponent<Palanca>())
+        if (other.GetComponent<Palanca>() || other.GetComponent<Cartel>())
             objetoInteractivo = null;
+
+        if (other.GetComponent<Altar>())
+            altarActivo = null;
+
+        if (other.GetComponent<Cartel>())
+            other.GetComponent<Cartel>().Interaccion(false);
 
         if (other.gameObject.name == "Flotar")
         {
@@ -238,7 +276,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (Input.GetAxisRaw("Vertical") < 0 && _pisoton == false)
+            if (Input.GetAxisRaw("Vertical") < 0 && _pisoton == false && _pisotonDesbloqueado)
             {
                 Debug.Log("pisoton");
                 _pisoton = true;
@@ -355,6 +393,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(_tiempoDash);
         _anim.SetBool("Dash", false);
         _sePuedeMover = true;
+        Debug.Log("Gravedad normal dash");
         rb.gravityScale = _gravedadInicial;
     }
 
@@ -403,8 +442,8 @@ public class PlayerMovement : MonoBehaviour
             _anim.SetTrigger("AgarrarPared");
             _primerToque = false;
             rb.gravityScale = 0;
-            _sePuedeMover = false;
             rb.velocity = new Vector2(0, 0);
+            _sePuedeMover = false;
         }
         else
         {
@@ -433,10 +472,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.gravityScale = 0;
             rb.velocity = new Vector2(rb.velocity.x, _fuerzaFlotar);
+            _volando = true;
             _anim.SetTrigger("Saltar");
         }
         else if (!flotar)
         {
+            _volando = false;
             rb.gravityScale = _gravedadInicial;
         }
     }

@@ -128,8 +128,22 @@ public class Bull : MonoBehaviour
                 break;
             case "Pisado":
                 Debug.Log("Rebotar");
+                _anim.SetTrigger("Death");
+                Death();
                 break;
         }
+    }
+
+    private void Death()
+    {
+        _rb.velocity = new Vector2(0, 0);
+        _puedeAtacar = false;
+        _player.GetComponent<PlayerMovement>().Atacada(0, _rebote);
+    }
+
+    public void DesactivarToro()
+    {
+        gameObject.SetActive(false);
     }
 
     private void Attack()

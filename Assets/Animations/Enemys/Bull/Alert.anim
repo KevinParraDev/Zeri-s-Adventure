@@ -24,13 +24,13 @@ AnimationClip:
     - time: 0.083333336
       value: {fileID: 1392377747, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
     - time: 0.16666667
-      value: {fileID: -2078241769, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
+      value: {fileID: -1448866643, guid: df35a05b2eda2604483b6d7fa10fa31c, type: 3}
     - time: 0.25
-      value: {fileID: 1315861836, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
+      value: {fileID: -120377942, guid: df35a05b2eda2604483b6d7fa10fa31c, type: 3}
     - time: 0.33333334
-      value: {fileID: 2054166228, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
+      value: {fileID: -120377942, guid: df35a05b2eda2604483b6d7fa10fa31c, type: 3}
     - time: 0.41666666
-      value: {fileID: 593102166, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
+      value: {fileID: 480705747, guid: df35a05b2eda2604483b6d7fa10fa31c, type: 3}
     - time: 0.5
       value: {fileID: -1306435284, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
     - time: 0.5833333
@@ -60,10 +60,10 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 519948180, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
     - {fileID: 1392377747, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
-    - {fileID: -2078241769, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
-    - {fileID: 1315861836, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
-    - {fileID: 2054166228, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
-    - {fileID: 593102166, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
+    - {fileID: -1448866643, guid: df35a05b2eda2604483b6d7fa10fa31c, type: 3}
+    - {fileID: -120377942, guid: df35a05b2eda2604483b6d7fa10fa31c, type: 3}
+    - {fileID: -120377942, guid: df35a05b2eda2604483b6d7fa10fa31c, type: 3}
+    - {fileID: 480705747, guid: df35a05b2eda2604483b6d7fa10fa31c, type: 3}
     - {fileID: -1306435284, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
     - {fileID: 617831304, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}
     - {fileID: -1020151497, guid: 160324564e07f9a4ca32a05e403bcca4, type: 3}

@@ -8,7 +8,9 @@ public class WeakGround : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && other.GetComponent<PlayerMovement>()._pisoton == true)
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            GetComponent<Animator>().enabled = true;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }
