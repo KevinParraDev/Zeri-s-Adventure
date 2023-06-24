@@ -8,6 +8,9 @@ ello necesitas superar todas las adversidades que trae la cueva: pozos de acido,
 
 A lo largo del mapa vas a adquirir diferentes habilidades que te permitirán seguir avanzando, ¡buena suerte!
 
+## ¿Como Jugarlo?
+El juego está disponible en itch.io, puedes jugarlo desde tu navegador visitando el siguiente link: https://santiago-parra.itch.io/zeris-adventure.
+Tambien está disponible para Windows, lo puedes descargar en el ultimo release.
 
 ## Gameplay
 [![Alt text](https://img.youtube.com/vi/cMdAMpP4f-E/0.jpg)](https://www.youtube.com/watch?v=cMdAMpP4f-E)
