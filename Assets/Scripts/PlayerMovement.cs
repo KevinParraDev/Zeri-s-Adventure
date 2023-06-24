@@ -282,10 +282,11 @@ public class PlayerMovement : MonoBehaviour
                 _pisoton = true;
                 rb.velocity = new Vector2(0, _fuerzaPisoton);
             }
-
+            Debug.Log("No suelo ni pared");
             if (rb.velocity.y < 0 && _cayendo == false)
             {
                 _cayendo = true;
+                Debug.Log("Anim caer");
                 _anim.SetTrigger("Caer");
             }
             StartCoroutine(CoyoteTime());   //Guardar salto aqui
@@ -470,9 +471,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (flotar)
         {
+            _cayendo = false;
             rb.gravityScale = 0;
             rb.velocity = new Vector2(rb.velocity.x, _fuerzaFlotar);
             _volando = true;
+            Debug.Log("Volar");
             _anim.SetTrigger("Saltar");
         }
         else if (!flotar)
@@ -488,6 +491,7 @@ public class PlayerMovement : MonoBehaviour
         rb.gravityScale = 0;
         rb.velocity = Vector2.zero;
         _viva = false;
+        Debug.Log("Holis");
         _anim.SetTrigger("Morir");
     }
 

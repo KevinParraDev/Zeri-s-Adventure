@@ -10,7 +10,10 @@ public class WeakGround : MonoBehaviour
         {
             //gameObject.SetActive(false);
             GetComponent<Animator>().enabled = true;
-            GetComponent<BoxCollider2D>().enabled = false;
+            foreach (BoxCollider2D coll in GetComponents<BoxCollider2D>())
+            {
+                coll.enabled = false;
+            }
         }
     }
 }
