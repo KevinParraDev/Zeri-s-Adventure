@@ -27,6 +27,7 @@ public class Bull : MonoBehaviour
     private bool _pisado;
     private bool _puedeAtacar = false;
     public float forceAttackX, forceAttackY;
+    private bool _vivo = true;
 
     private void ChangeState(StateType newState)
     {
@@ -136,6 +137,7 @@ public class Bull : MonoBehaviour
 
     private void Death()
     {
+        _vivo = false;
         _rb.velocity = new Vector2(0, 0);
         _puedeAtacar = false;
         _player.GetComponent<PlayerMovement>().Atacada(0, _rebote);
@@ -196,7 +198,8 @@ public class Bull : MonoBehaviour
 
     private void Update()
     {
-        DetectarEntorno();
+        if (_vivo)
+            DetectarEntorno();
 
         if (stateType == StateType.Idle)
         {

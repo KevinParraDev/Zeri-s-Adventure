@@ -10,6 +10,7 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] private Animator cuadroDialogoAnim;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField, TextArea(4, 6)] private string[] dialogueLines;
+    [SerializeField, TextArea(4, 6)] private string[] dialogueLinesEnglish;
     private bool cuadroActivo = false;
 
     private int lineIndex;
@@ -26,6 +27,7 @@ public class DialogSystem : MonoBehaviour
         }
         else
         {
+            StopCoroutine("ShowLine");
             cuadroActivo = false;
             dialogueText.text = "";
             cuadroDialogoAnim.SetTrigger("Desaparecer");
@@ -38,8 +40,11 @@ public class DialogSystem : MonoBehaviour
         dialogueText.text = string.Empty;
         int charIndex = 0;
 
-        foreach (char ch in dialogueLines[lineIndex])
+        foreach (char ch in dialogueLinesEnglish[lineIndex])
         {
+            if (cuadroActivo == false)
+                break;
+
             dialogueText.text += ch;
 
             charIndex++;

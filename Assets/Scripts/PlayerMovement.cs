@@ -89,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Atacada(float x, float y)
     {
+        _anim.SetTrigger("Saltar");
         _atacada = true;
         rb.velocity = new Vector2(0, 0);
         rb.velocity = new Vector2(x, y);
@@ -167,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
         // Agacharse
         if (Input.GetAxisRaw("Vertical") < 0 && _agachado == false && !_agarrarPared && _enSuelo)
             Agacharse(true);
-        else if (Input.GetAxisRaw("Vertical") >= 0 && _agachado == true)
+        else if (Input.GetAxisRaw("Vertical") >= 0 && _agachado == true && _enSuelo && !_agarrarPared)
             Agacharse(false);
 
         // Atacar
@@ -192,6 +193,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("_cayendo enter");
+        if (other.gameObject.tag == "JumpMush")
+        {
+            Debug.Log("_cayendo falsee");
+            _cayendo = false;
+        }
+
         if (other.GetComponent<Palanca>() || other.GetComponent<Cartel>())
         {
             objetoInteractivo = other.gameObject;
@@ -251,18 +259,9 @@ public class PlayerMovement : MonoBehaviour
                 AgarrarPared(false);
         }
 
-        if (_enSuelo)
-        {
-            if (_cayendo)
-            {
-                _cayendo = false;
-                arerrizarSound.Play();
-                _anim.SetTrigger("Aterrizar");
-            }
-        }
-
         if (_enSuelo || _enPared)
         {
+            Debug.Log("En suelo o pared");
             _puedeHacerDash = true;
             _puedeSaltar = true;
             if (_saltoGuardado)
@@ -278,18 +277,24 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetAxisRaw("Vertical") < 0 && _pisoton == false && _pisotonDesbloqueado)
             {
-                Debug.Log("pisoton");
                 _pisoton = true;
                 rb.velocity = new Vector2(0, _fuerzaPisoton);
             }
-            Debug.Log("No suelo ni pared");
+            Debug.Log("Caer afuera " + _cayendo);
             if (rb.velocity.y < 0 && _cayendo == false)
             {
                 _cayendo = true;
-                Debug.Log("Anim caer");
+                Debug.Log("Caer");
                 _anim.SetTrigger("Caer");
             }
             StartCoroutine(CoyoteTime());   //Guardar salto aqui
+        }
+
+        if (_enSuelo && _cayendo)
+        {
+            _cayendo = false;
+            arerrizarSound.Play();
+            _anim.SetTrigger("Aterrizar");
         }
     }
 
@@ -297,7 +302,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float movimiento = inputX * _velocidadMovimiento;
 
-        if (movimiento != 0)
+        if (movimiento != 0 && _enSuelo)
             _anim.SetBool("Caminar", true);
         else
             _anim.SetBool("Caminar", false);
@@ -346,6 +351,9 @@ public class PlayerMovement : MonoBehaviour
     private void Saltar()
     {
         AgarrarPared(false);
+        Debug.Log("Animacion Saltar");
+        _anim.ResetTrigger("Aterrizar");
+        _anim.ResetTrigger("AgarrarPared");
         _anim.SetTrigger("Saltar");
 
         switch (TipoDeSalto())
@@ -392,6 +400,12 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(_velocidadDash * transform.localScale.x, 0);
 
         yield return new WaitForSeconds(_tiempoDash);
+
+        if (_viva == false)
+        {
+            Debug.Log("Muerta en dash");
+            StartCoroutine(delayReaparecer());
+        }
         _anim.SetBool("Dash", false);
         _sePuedeMover = true;
         Debug.Log("Gravedad normal dash");
@@ -403,6 +417,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Agacharse:" + e);
         _agachado = e;
         string t = e ? "Agacharse" : "Pararse";
+        _anim.ResetTrigger("Pararse");
         _anim.SetTrigger(t);
     }
 
@@ -457,7 +472,10 @@ public class PlayerMovement : MonoBehaviour
     private void Trepar(float inputY)
     {
         if (inputY == 0)
+        {
             _anim.SetTrigger("AgarrarPared");
+            _anim.SetBool("Trepar", false);
+        }
         else if (inputY > 0)
             _anim.SetBool("Trepar", true);
         else if (inputY < 0)
@@ -495,10 +513,24 @@ public class PlayerMovement : MonoBehaviour
         _anim.SetTrigger("Morir");
     }
 
+    public void PrintMorir()
+    {
+        Debug.Log("Morir Print");
+    }
+
     public IEnumerator delayReaparecer()
     {
+        Debug.Log("Reaparecer 1");
+
+        StopCoroutine("GuardarSalto");
+        StopCoroutine("SaltandoPared");
+        StopCoroutine("CoyoteTime");
+        StopCoroutine("Dash");
+        StopCoroutine("ResetAtacada");
+
         GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSecondsRealtime(0.5f);
+        Debug.Log("Reaparecer 2");
         Reaparecer();
     }
 
