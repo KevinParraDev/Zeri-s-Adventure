@@ -40,7 +40,7 @@ public class DialogSystem : MonoBehaviour
         dialogueText.text = string.Empty;
         int charIndex = 0;
 
-        foreach (char ch in dialogueLinesEnglish[lineIndex])
+        foreach (char ch in dialogueLines[lineIndex])
         {
             if (cuadroActivo == false)
                 break;

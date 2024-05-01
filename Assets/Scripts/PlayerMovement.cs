@@ -146,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // flotar
-        if (Input.GetButton("Fire2") && _puedeVolar && _planearDesbloquado && !_agarrarPared)
+        if ((Input.GetButton("Fire2") || Input.GetKeyDown(KeyCode.X)) && _puedeVolar && _planearDesbloquado && !_agarrarPared)
         {
             Flotar(true);
         }
@@ -156,11 +156,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Saltar
-        if ((Input.GetButtonDown("Jump")) && _puedeSaltar && !_atacada)
+        if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.C)) && _puedeSaltar && !_atacada)
         {
             Saltar();
         }
-        else if ((Input.GetButtonDown("Jump")) && !_puedeSaltar)
+        else if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.C)) && !_puedeSaltar)
         {
             StartCoroutine(GuardarSalto());
         }
@@ -176,7 +176,7 @@ public class PlayerMovement : MonoBehaviour
             Atacar();
 
         // Dash
-        if (Input.GetButtonDown("Fire3") && _puedeHacerDash && _dashDesbloqueado)
+        if ((Input.GetButtonDown("Fire3") || Input.GetKeyDown(KeyCode.Z)) && _puedeHacerDash && _dashDesbloqueado)
             StartCoroutine(Dash());
 
         // Agarrar Pared
@@ -185,9 +185,9 @@ public class PlayerMovement : MonoBehaviour
         else if (_deslizandose && !_agarrarPared)
             Deslizarse(false);
 
-        if (_enPared && Input.GetButton("Fire2") && !_saltandoEnPared && _primerToque)
+        if (_enPared && (Input.GetButton("Fire2") || Input.GetKey(KeyCode.X)) && !_saltandoEnPared && _primerToque)
             AgarrarPared(true);
-        else if (Input.GetButtonUp("Fire2"))
+        else if (Input.GetButtonUp("Fire2") || Input.GetKeyUp(KeyCode.X))
             AgarrarPared(false);
     }
 
@@ -261,7 +261,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (_enSuelo || _enPared)
         {
-            Debug.Log("En suelo o pared");
             _puedeHacerDash = true;
             _puedeSaltar = true;
             if (_saltoGuardado)
@@ -280,11 +279,9 @@ public class PlayerMovement : MonoBehaviour
                 _pisoton = true;
                 rb.velocity = new Vector2(0, _fuerzaPisoton);
             }
-            Debug.Log("Caer afuera " + _cayendo);
             if (rb.velocity.y < 0 && _cayendo == false)
             {
                 _cayendo = true;
-                Debug.Log("Caer");
                 _anim.SetTrigger("Caer");
             }
             StartCoroutine(CoyoteTime());   //Guardar salto aqui
@@ -408,13 +405,11 @@ public class PlayerMovement : MonoBehaviour
         }
         _anim.SetBool("Dash", false);
         _sePuedeMover = true;
-        Debug.Log("Gravedad normal dash");
         rb.gravityScale = _gravedadInicial;
     }
 
     private void Agacharse(bool e)
     {
-        Debug.Log("Agacharse:" + e);
         _agachado = e;
         string t = e ? "Agacharse" : "Pararse";
         _anim.ResetTrigger("Pararse");
@@ -423,7 +418,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Atacar()
     {
-        Debug.Log("Atacar");
+
     }
 
     private void Pisoton()
@@ -454,7 +449,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (_agarrarPared)
         {
-            print("Trepando");
             _anim.SetTrigger("AgarrarPared");
             _primerToque = false;
             rb.gravityScale = 0;
@@ -463,7 +457,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            print("Dejó de trepar");
             rb.gravityScale = _gravedadInicial;
             _sePuedeMover = true;
         }
