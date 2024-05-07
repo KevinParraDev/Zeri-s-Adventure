@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator _anim;
     [SerializeField] private bool _viva = true;
+    [SerializeField] private bool _modoCelular;
 
     //-----------------------------------------------------------
     [Header("Inputs")]
@@ -27,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _velocidadZero = Vector3.zero;
     private bool _mirarDerecha = true;
     private bool _agachado = false;
+    private int _movimientoHorizontal = 0;
+    private int _movimientoVertical = 0;
 
     [Header("Salto")]
     [SerializeField] private float _fuerzaSalto;
@@ -83,7 +86,12 @@ public class PlayerMovement : MonoBehaviour
         if (_viva)
         {
             DetectarEstado();
-            GetInputs();
+
+            if(!_modoCelular)
+                GetInputs();
+
+            if (_enPared && !_saltandoEnPared && _primerToque)
+                AgarrarPared(true);
         }
     }
 
@@ -112,19 +120,80 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
     private void FixedUpdate()
     {
         if (_viva)
         {
             DetectarEntorno();
-            // Moverse
-            if (_sePuedeMover)
-                Moverse(Input.GetAxisRaw("Horizontal") * Time.fixedDeltaTime);
 
-            // Trepar
-            if (_agarrarPared)
-                Trepar(Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime);
+            // Moverse
+            if(!_modoCelular)
+            {
+                if (_sePuedeMover)
+                        Moverse(Input.GetAxisRaw("Horizontal") * Time.fixedDeltaTime);
+
+                // Trepar
+                if (_agarrarPared)
+                    Trepar(Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime);
+            }
+            else
+            {
+                if (_sePuedeMover)
+                    Moverse(_movimientoHorizontal * Time.fixedDeltaTime);
+
+                Debug.Log("pared: " + _agarrarPared + " - mov: " + _movimientoVertical);
+                if(_agarrarPared)
+                    Trepar(_movimientoVertical * Time.fixedDeltaTime);
+            }
         }
+    }
+
+    public void InputUI(string type)
+    {
+        if(type == "saltar")
+        {
+            if (_puedeSaltar && !_atacada)
+            {
+                Saltar();
+            }
+            else if (!_puedeSaltar)
+            {
+                StartCoroutine(GuardarSalto());
+            }
+        }
+        else if(type == "dash")
+        {
+            if (_puedeHacerDash && _dashDesbloqueado)
+                StartCoroutine(Dash());
+        }
+        else if(type == "info")
+        {
+            if (objetoInteractivo != null)
+            {
+                if (objetoInteractivo.TryGetComponent<Palanca>(out Palanca objeto))
+                    objeto.Interaccion();
+
+                if (objetoInteractivo.TryGetComponent<Cartel>(out Cartel objeto3))
+                    objeto3.Interaccion();
+            }
+
+            if (altarActivo != null)
+            {
+                if (altarActivo.TryGetComponent<Altar>(out Altar objeto2))
+                    objeto2.Interaccion(this);
+            }
+        }
+    }
+
+    public void InputMovimiento(int dir)
+    {
+        _movimientoHorizontal = dir;
+    }
+
+    public void InputMovimientoVertical(int dir)
+    {
+        _movimientoVertical = dir;
     }
 
     private void GetInputs()
@@ -185,10 +254,13 @@ public class PlayerMovement : MonoBehaviour
         else if (_deslizandose && !_agarrarPared)
             Deslizarse(false);
 
-        if (_enPared && (Input.GetButton("Fire2") || Input.GetKey(KeyCode.X)) && !_saltandoEnPared && _primerToque)
+        //if (_enPared && (Input.GetButton("Fire2") || Input.GetKey(KeyCode.X)) && !_saltandoEnPared && _primerToque)
+        //    AgarrarPared(true);
+        //else if (Input.GetButtonUp("Fire2") || Input.GetKeyUp(KeyCode.X))
+        //    AgarrarPared(false);
+
+        if (_enPared && !_saltandoEnPared && _primerToque)
             AgarrarPared(true);
-        else if (Input.GetButtonUp("Fire2") || Input.GetKeyUp(KeyCode.X))
-            AgarrarPared(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -295,7 +367,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Moverse(float inputX)
+    public void Moverse(float inputX)
     {
         float movimiento = inputX * _velocidadMovimiento;
 
@@ -306,8 +378,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (!_saltandoEnPared)
         {
-            Vector3 velocidadFinal = new Vector2(movimiento, rb.velocity.y);
-            rb.velocity = Vector3.SmoothDamp(rb.velocity, velocidadFinal, ref _velocidadZero, _suavisadoMovimiento);
+            //Vector3 velocidadFinal = new Vector2(movimiento, rb.velocity.y);
+            //rb.velocity = Vector3.SmoothDamp(rb.velocity, velocidadFinal, ref _velocidadZero, _suavisadoMovimiento);
+            rb.velocity = new Vector2(movimiento, rb.velocity.y);
         }
 
         //Cambiar la direccion a la que saltará cuando este en una pared (Antes de girar)
@@ -345,7 +418,7 @@ public class PlayerMovement : MonoBehaviour
             return "Basico";
     }
 
-    private void Saltar()
+    public void Saltar()
     {
         AgarrarPared(false);
         Debug.Log("Animacion Saltar");
